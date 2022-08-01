@@ -29,8 +29,8 @@ The application deploy is done using ECS that is a management and deployment too
 
 In our project we use ECS target that is a serverless service (there is no use to define instancess, only RAM and CPU).
 
-The deployment done using image that is inside the ECR (the image is pushed by codebuild) with  loadBalancer.
+The deployment done using image that is inside the ECR (the image is pushed by codebuild).
 
 ECS is responsible for the health and wellness of the containers. It also responsible of Zero Down Time of the application, that when we are make changes in the application or scaling one of application component the clients are moved to another available instance.
 
-In our project the application is deployed to 3 available containers.
+In our project the application is deployed to 3 available containers with  loadBalancer.
