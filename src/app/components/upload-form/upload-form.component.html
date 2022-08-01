@@ -1,0 +1,87 @@
+
+<div *ngIf="successMsg">מבחן עלה בהצלחה</div>
+<div class="x">
+  <div class="mb-3">
+      <label for="exampleDropdownFormEmail2" class="form-label"></label>
+      <input [(ngModel)]="create.subject_of_the_test" type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="subject_of_the_test">
+    </div>
+    <div class="mb-3">
+      <label for="exampleDropdownFormEmail2" class="form-label"></label>
+      <input [(ngModel)]="create.name_the_Lecturer" type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder=" name_the_Lecturer">
+    </div>
+    <label>
+      <input
+        type="file"
+        class="text-nowrap text-truncate"
+        (change)="selectFile($event)"
+      />
+    </label>
+    
+    <button
+      class="btn btn-success btn-sm"
+      [disabled]="!selectedFiles"
+      (click)="upload()"
+      (click)='creatTest()'
+      >
+      Upload
+    </button>
+    
+        
+  
+    <div *ngIf="currentFileUpload" class="progress mt-2">
+      <div
+        class="progress-bar progress-bar-info"
+        role="progressbar"
+        attr.aria-valuenow="{{ percentage }}"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [ngStyle]="{ width: percentage + '%' }"
+      >
+        {{ percentage }}%
+      </div>
+  
+  
+    </div>
+  
+
+ <!-- <button (click)='creatTest()' type="submit" class="btn btn-primary">creatTest</button> -->
+  
+</div>
+
+
+
+
+
+
+<!-- <label>
+    <input
+      type="file"
+      class="text-nowrap text-truncate"
+      (change)="selectFile($event)"
+    />
+  </label>
+  
+  <button
+    class="btn btn-success btn-sm"
+    [disabled]="!selectedFiles"
+    (click)="upload()"
+  >
+    Upload
+  </button>
+  
+      <div *ngIf="successMsg">מבחן עלה בהצלחה</div>
+
+  <div *ngIf="currentFileUpload" class="progress mt-2">
+    <div
+      class="progress-bar progress-bar-info"
+      role="progressbar"
+      attr.aria-valuenow="{{ percentage }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [ngStyle]="{ width: percentage + '%' }"
+    >
+      {{ percentage }}%
+    </div>
+
+
+  </div> -->

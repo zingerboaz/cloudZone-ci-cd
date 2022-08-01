@@ -1,0 +1,9 @@
+.c{
+ width: 50%;   
+ margin-left: 25%;
+}
+
+.error_messages {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,22 @@
+<div class="a">
+       <span>
+              <h1> Hi, {{user.full_name}} please type the 
+              mobile verification
+              code you received</h1>
+       </span>
+       <!-- <form class="row g-3"> -->
+       
+              <div class="col-auto b">
+                     <label for="inputPassword2" class="visually-hidden">Password</label>
+                     <input [(ngModel)]="Password.number" type="password" class="form-control" id="inputPassword2"
+                            placeholder="Password">
+              </div>
+              <div class="col-auto b ">
+                     <button  (click)='check()' type="submit" class="btn btn-primary mb-3">Confirm
+                            identity</button>
+              </div>
+       <!-- </form> -->
+       <h1>i did not receive, resend</h1>
+</div>
+
+<app-sign-up1 *ngIf="c==2"></app-sign-up1>

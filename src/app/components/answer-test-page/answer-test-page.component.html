@@ -1,0 +1,30 @@
+<body class="z">
+    <figure *ngFor='let item of fireBase.allUsers[fireBase.currentAnswerTestIndex].listTestAnswers; index as i'>
+        <img [src]="item.url" alt="this is img" style="width: 700px; height: 500px;" />
+        <figcaption>{{item.subject_of_the_test}}
+
+            <label for="exampleDropdownFormEmail2" class="form-label"></label>
+           <div class="s"> <div class="row">
+
+                <input [(ngModel)]="test[i].score" type="score" class="form-control col" id="exampleDropdownFormEmail2"
+                    placeholder="updateScore">
+
+                <button (click)='updateScore(i)' type="submit" class="btn btn-primary col">sendTest</button>
+                <div class='error_messages'>{{error}}</div>
+            </div>
+        </div>
+        </figcaption>
+    </figure>
+</body>
+
+
+
+<!-- title="item.subject_of_the_test" -->
+
+<!-- <figure>
+    <img src="img.jpg" alt="my img"/>
+    <figcaption> Your text </figcaption>
+  </figure
+
+
+<div *ngFor="let i of user.listTestAnswers"> {{i.name}}</div> -->

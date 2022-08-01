@@ -1,0 +1,45 @@
+.parallax {
+    height:100%;
+    background-image: url("https://image.shutterstock.com/image-photo/tropical-paradise-beach-white-sand-260nw-674128501.jpg");
+   
+  
+  /* Set a specific height */
+  height: 500px;
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .parallax1 {
+    height:100%;
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/san%20francisco-ocean_4TELFLYCU1.jpg"); 
+   
+  
+  /* Set a specific height */
+  height: 500px;
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .parallax2 {
+    height:100%;
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/280h/HGJ08ZTX4C.jpg"); 
+   
+  
+  /* Set a specific height */
+  height: 500px;
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
+  
+  

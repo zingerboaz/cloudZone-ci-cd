@@ -1,0 +1,22 @@
+<div class="x">
+<h5>To access your account, please identify yourself by providing the information requested in the fields below, then click "Login"</h5>
+ 
+    <div class="mb-3">
+      <label for="exampleDropdownFormEmail2" class="form-label"></label>
+      <input [(ngModel)]="login.email" type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="exampleDropdownFormPassword2" class="form-label"></label>
+      <input [(ngModel)]="login.password" type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+    </div>
+    <div class="mb-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+        <label class="form-check-label" for="dropdownCheck2">
+          Remember me
+        </label>
+      </div>
+    </div>
+    <button (click)='getlogin()' type="submit" class="btn btn-primary">Login</button>
+    <div class='error_messages'>{{errors}}</div>
+</div>

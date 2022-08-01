@@ -1,0 +1,22 @@
+
+<h1> Hi, {{user.full_name}} please type the 
+   Password,
+    and Email </h1>
+
+<form [formGroup]='registr' (ngSubmit)='sendForm()'>
+
+    <div class="form-group b">
+      <label >password</label>
+      <input formControlName='password' class="form-control"  placeholder="password">
+    </div>
+  <div class="form-group b">
+      <label >Email</label>
+      <input formControlName='email' class="form-control"  placeholder="email">
+    </div>
+    <div class='error_messages'>{{errors}}</div>
+    <div class="form-group b">
+      <button >NEXT</button>
+      <button >NEXT</button>
+    </div>
+  </form>
+  

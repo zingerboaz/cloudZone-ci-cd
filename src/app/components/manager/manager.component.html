@@ -1,0 +1,86 @@
+<h1> Hi manager, please type the
+  Password,
+  and Email 
+</h1>
+
+
+<form [formGroup]='managerFrom' (ngSubmit)='sendForm()'>
+
+  <div class="form-group b">
+    <label>full_name</label>
+    <input formControlName='full_name' class="form-control" placeholder="full_name">
+  </div>
+  <div class="form-group b">
+    <label>id</label>
+    <input formControlName='id' class="form-control" placeholder="id">
+  </div>
+  <div class="form-group b">
+    <label>password</label>
+    <input formControlName='password' class="form-control" placeholder="password">
+  </div>
+  <div class="form-group b">
+    <label>Email</label>
+    <input formControlName='email' class="form-control" placeholder="email">
+  </div>
+  <div class='error_messages'>{{errors}}</div>
+  <div class="form-group b">
+    <button>NEXT</button>
+  </div>
+</form>
+
+                                                                                    
+<div class="col-auto b ">
+  <button (click)='findAllUsers()' type="submit" class="btn btn-primary mb-3">GET-ALL-USERS
+  </button>
+</div>
+<div class="col-auto b ">                                                                       
+  <button (click)='editingTest()' type="submit" class="btn btn-primary mb-3">EDITING-TEST
+  </button>
+</div>
+
+<div class="col-auto b ">
+  <button (click)='delete()' type="submit" class="btn btn-primary mb-3">DELETE-USERS/TESTS
+  </button>
+</div>
+
+
+<app-manager-users *ngIf="bool1" [users]="users"></app-manager-users>
+<app-upload-form  *ngIf="bool2"></app-upload-form>
+ <div class="container">
+   <div class="row">
+    
+    <app-manager-update-test *ngIf="bool3"></app-manager-update-test>
+ 
+  </div>
+</div>
+<!-- <app-creat-test *ngIf="bool2" ></app-creat-test> -->
+
+
+
+
+
+
+
+<!-- <div class="flex-container height">
+   
+  <table class="table table-bordered table-hover col-md-4 ">
+      <thead>
+        <tr>
+          <th scope="col">N</th>
+          <th scope="col">Name</th>
+          <th scope="col">ID</th>
+          <th scope="col">Phone</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let user of users; index as i">
+          <th scope="row">{{i+1}}</th>
+          
+          <td>{{user.name}}</td>
+          <td>{{user.id}}</td>
+          <td>{{user.phone}}</td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div> -->

@@ -1,0 +1,51 @@
+<body class="z">
+ 
+<p class="text-success ml-1">personal details</p>
+<h1 class="mb-4">please tell us about yourself, personally</h1>
+<form class= "row g-3" [formGroup]='updatepersonForm' (ngSubmit)='sendForm()'>
+
+  <div class="col-md-4 mb-2">
+    <label >year</label>
+    <input formControlName='year' class="form-control"  placeholder="year">
+  </div>
+<div class="col-md-4 mb-2 ">
+    <label >age</label>
+    <input formControlName='age' class="form-control"  placeholder="age">
+  </div>
+ 
+  <div class="col-md-4 mb-2">
+  <label for = "country"class= "form-label">Country </label>
+  <select id = "country" formControlName='country'name="country" class="form-control">
+    <option selected>Country</option>
+    <option value="Israel">Israel</option>
+    <option value="Britain">Britain</option>
+    <option value="France">France</option>
+  </select>
+</div>
+
+<div class="col-md-4 mb-2">
+  <label for = "City"class= "form-label">City </label>
+  <select id = "City" formControlName='city' name="city" class="form-control"  placeholder="City"  >
+    <option selected>City</option>
+    <option value="jerusalem">jerusalem</option>
+    <option value="London">London</option>
+    <option value="Paris">Paris</option>
+  </select>
+</div>
+  
+<div class="col-md-4 mb-2">
+  <label for = "academic"class= "form-label">academic institution </label>
+  <select id = "academic" formControlName='academic' name="academic" class="form-control">
+    <option selected>Academic institution</option>
+    <option value="hadasa">hadasa</option>
+    <option value="soroka">soroka</option>
+    <option value="rambam">rambam</option>
+  </select>
+</div>
+  
+<div class="form-group b">
+    <button >NEXT</button>
+  </div>
+</form>
+
+</body>

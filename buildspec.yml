@@ -1,0 +1,44 @@
+version: 0.2
+
+phases:
+  
+  pre_build:
+    commands:
+      - echo login in to ECR
+      - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 044524633564.dkr.ecr.eu-west-1.amazonaws.com
+      - REPOSITORY_URL=044524633564.dkr.ecr.eu-west-1.amazonaws.com/ecr
+      - IMAGE_TAG=angular-app
+      
+ 
+  build:
+    commands:
+      - echo building the docker image...
+      - docker build -t $IMAGE_TAG:latest .
+      - docker tag $IMAGE_TAG:latest $REPOSITORY_URL
+      
+      
+  post_build:
+    commands:  
+      - echo pushing the docker images... 
+      - docker push $REPOSITORY_URL:latest
+      #- echo  writing image definitions file.... 
+      #- print '[{"name":"angularapp","imageUrl":"%s"}]'  $REPOSITORY_URL:$IMAGE_TAG >imagedefinitions.json
+      #- cat imagedefinitions.json
+
+
+#artifacts:
+#  files:  imagedefinitions.json
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+

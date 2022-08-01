@@ -1,0 +1,22 @@
+<div class="x">
+    <div class="mb-3">
+        <label for="exampleDropdownFormEmail2" class="form-label"></label>
+        <input [(ngModel)]="create.subject_of_the_test" type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="subject_of_the_test">
+      </div>
+      <div class="mb-3">
+        <label for="exampleDropdownFormEmail2" class="form-label"></label>
+        <input [(ngModel)]="create.name_the_Lecturer" type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder=" name_the_Lecturer">
+      </div>
+      <!-- <div class="mb-3">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+          <label class="form-check-label" for="dropdownCheck2">
+            Remember me
+          </label>
+        </div>
+      </div> -->
+
+    <button (click)='creatTest()' type="submit" class="btn btn-primary">creatTest</button>
+    <app-upload-form></app-upload-form>
+
+</div>

@@ -1,0 +1,105 @@
+<body class="z">
+  <div class="continer">
+    <div class="row">
+      <div class="col-2">
+        <div class="w">
+          <div class="s">
+            <h3>hi {{fireBase.internResult.full_name}},
+              <br>
+              <h5>It's your grades</h5>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="s">
+          <table class="table" class="table table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">YOUR PRACTISES/TESTS</th>
+                <th scope="col"></th>
+                <th scope="col">SEE RESULTS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let u of fireBase.internResult.listTestAnswers;let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td> {{u.subject_of_the_test}}</td>
+                <td
+                  [ngClass]="{'text-success':u.score &gt;=86,'text-warning':u.score  &lt;=85,'text-danger':u.score  &lt;79}">
+                  <div class="box">{{u.score}}</div>
+                </td>
+                <!-- &nbsp;&nbsp;&nbsp; -->
+
+                <td><button #resultBtn value="{{i}}" class="btn btn-outline-secondary"
+                    (click)="sendResult(resultBtn)">seeResult</button></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="w">
+          <div class="s">
+            <div>
+              <button  class="btn btn-outline-secondary" (click)="average()">average</button>
+            </div>
+           
+            <div [ngClass]="{'text-success':mediocre &gt;=86,'text-warning':mediocre  &lt;=85,'text-danger':mediocre  &lt;79}">
+              <div class="box2">{{mediocre|number:'1.0-1'}}</div> 
+            </div>
+            <br>
+            <br>
+            <app-test></app-test>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-see-result *ngIf="bool1"></app-see-result>
+</body>
+
+<!-- <td><div class="box"><div class="center"[ngClass]="{'text-success':u.score &gt;=80,'text-danger':u.score  &lt;=70,'text-danger':u.score  &lt;=80}" >{{u.score}}</div></div></td> -->
+
+
+<!-- <button #testBtn value="{{i}}" class="btn btn-primary"
+(click)="sendTest(test.subject_of_the_test, testBtn)">
+submit
+</button> -->
+
+
+<!-- <thead>
+    <tr>
+      <th scope="col">N</th>
+      <th scope="col">Name</th>
+      <th scope="col">ID</th>
+      <th scope="col">ListTestQuestions</th>
+      <th scope="col">ListTestAnswers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; index as i">
+      <th scope="row">{{i+1}}</th>
+
+      <td>{{user.full_name}}</td>
+      <td>{{user.id}}</td>
+      <td>
+        <div *ngFor="let u of user.listTestQuestions"> {{u}}</div>
+      </td>
+      <td>
+         <div *ngFor="let j of user.listTestAnswers">  -->
+<!-- {{j.url}} -->
+<!-- <button #testBtn value="{{i}}" class="btn btn-primary" (click)="showImg(testBtn.value)">
+          submit -->
+<!-- </button> -->
+<!-- </div> -->
+<!-- </td>
+    </tr> --> -->

@@ -1,0 +1,25 @@
+<label>Open the Test list
+    <select (change)='onSelect()' class="form-control" class="form-select form-select-sm" [(ngModel)]='SelectTest._id'
+        aria-label=".form-select-sm example">
+            <option *ngFor="let i of fireBaseService.allTests" [value]="i._id">{{i.subject_of_the_test}}</option>
+    </select>
+
+    
+    <button (click)='file.click()'>select file</button>
+    <input #file type="file" class="text-nowrap text-truncate" (change)="selectFile($event)" hidden />
+</label>
+
+<button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+    Upload answers to the test
+</button>
+
+
+
+<div *ngIf="currentFileUpload" class="progress mt-2">
+    <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ percentage }}"
+        aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: percentage + '%' }">
+        {{ percentage }}%
+    </div>
+
+
+</div>

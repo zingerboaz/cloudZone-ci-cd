@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <div>
+                <div class="s">
+                    <app-upload-intern></app-upload-intern>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-8">
+            <div>
+                <div class="s">
+                    <div class="flex-container height">
+                        <div *ngIf="isLoading">Tests are loading, Please wait</div>
+                            <table *ngIf="!isLoading" class="table table-bordered table-hover col-md-1">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Test subject</th>
+                                    <th scope="col">Lecturer name</th>
+                                    <th scope="col">Download test</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let test of fireBase.allTests; let i = index">
+                                    <th scope="row">{{i+1}}</th>
+
+                                    <td>{{test.subject_of_the_test}}</td>
+                                    <td>{{test.name_the_Lecturer}}</td>
+                                    <td>
+                                        <button #testBtn value="{{i}}" class="btn btn-primary"
+                                            (click)="sendTest(test.subject_of_the_test, testBtn)">
+                                            submit
+                                        </button>
+                                        <div *ngIf="error">{{error}}</div>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                           
+                        </table>
+                        <div class="text-center">
+                            <button (click)="examResults()"  class="btn btn-primary col-7 col-md-5">Exam results</button>
+                        </div>
+                        </div>
+                </div>
+            
+            </div>
+        </div>
+        <div class="col-2">
+            <div>
+                <div class="s"> xxxx</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div style="text-align: center; clear: both">
+  <div class="text-center"> <button class="btn">Exam results</button></div> 
+</div> -->

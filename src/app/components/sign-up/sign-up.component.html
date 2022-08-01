@@ -1,0 +1,38 @@
+<div class="c">
+  <h2>Welcome,Intern </h2>
+  <h6>please fill in the following </h6>
+  <form [formGroup]="personForm" (ngSubmit)='sendForm()' class='row'>
+
+    <div *ngFor="let data of dataObj" class="form-group col-md-{{data.width || 4 }}">
+      <label>{{data.name}}</label>
+      
+      <input *ngIf="!data.type" formControlName={{data.formControlName}} class="form-control" 
+      placeholder="Please enter {{data.name}}">
+
+      <input *ngIf="data.type === 'number'" 
+      type="number"
+      formControlName={{data.formControlName}} class="form-control" 
+      placeholder="Please enter {{data.name}}">
+
+
+      <div *ngIf="data.type === 'inputWithDropdown'" class="input-group mb-3">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let num of data.arr">
+            <a class="dropdown-item" href="#">{{num}}</a>
+          </li>
+        </ul>
+        <input type="text" class="form-control" aria-label="Text input with dropdown button"
+        placeholder="Please enter {{data.name}}">
+      </div>
+   </div>
+
+   <h6>A verification code will be send to you to this number</h6>
+    <div class="form-group">
+      <button [disabled]='!personForm.valid'>CONTINUE</button>
+    </div>
+
+    <div class='error_messages'>{{errors}}</div>
+  </form>
+</div>
+<!-- <div><button  >CONTINUE</button></div> -->

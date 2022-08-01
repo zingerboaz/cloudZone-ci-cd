@@ -1,0 +1,66 @@
+<!-- <select formControlName='users' class="form-control" class="form-select form-select-sm"
+    aria-label=".form-select-sm example">
+    <option selected>Open the Test list</option>
+    <option *ngFor="let i of fireBaseService.allUsers" value={{i._id}}>{{i.full_name}}</option>
+</select> -->
+
+<div class="continer">
+  <div class="row">
+
+    <select   class="form-control col-3" class="form-select form-select-sm"
+      [(ngModel)]='selectUser._id' aria-label=".form-select-sm example">
+      <option selected>Open the Users list</option>
+      <option *ngFor="let i of fireBaseService.allUsers" [value]="i._id">{{i.full_name}}</option>
+     
+      <div class='error_messages'>{{error}}</div>
+    </select>
+     <button (click)='onSelect()' type="submit" class="btn btn-primary">DELETE-USER</button> 
+
+    <!-- (change)='onSelect()' -->
+    <!-- <select formControlName='tests' class="form-control col-3" class="form-select form-select-sm"
+      aria-label=".form-select-sm example">
+      <option selected>Open the Test list</option>
+      <option *ngFor="let i of fireBaseService.allTests" value="i._id">{{i.subject_of_the_test}}</option>
+    </select>
+
+
+
+
+    <select formControlName='urls' class="form-control col-3" class="form-select form-select-sm"
+      aria-label=".form-select-sm example">
+      <option selected>Open the all Answers </option>
+      <option *ngFor="let user of fireBaseService.allUsers" value="i._id">
+        <div *ngFor="let i of user.listTestAnswers"> {{i.url}}</div>
+      </option>
+    </select>
+
+    <select formControlName='score' class="form-control col-3" class="form-select form-select-sm"
+      aria-label=".form-select-sm example">
+      <option selected>Select a score</option>
+      <option *ngFor="let i of arr">{{i}}</option>
+    </select> -->
+
+  </div>
+</div>
+
+
+
+
+
+<!-- <select (change)='onSelect()' class="form-control" class="form-select form-select-sm" [(ngModel)]='SelectTest._id'
+        aria-label=".form-select-sm example">
+    
+        
+        <option *ngFor="let i of fireBaseService.allTests" [value]="i._id">{{i.subject_of_the_test}}</option>
+    </select -->
+
+
+
+
+
+
+<!-- <button>create test after score</button> -->
+
+<!-- <div class="col-auto  ">
+  <button  (click)='check()' type="submit" class="btn btn-primary mb-3">all details
+         </button> -->

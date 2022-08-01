@@ -1,0 +1,39 @@
+<div class="flex-container height">
+
+  <table class="table table-bordered table-hover col-md-4 ">
+    <thead>
+      <tr>
+        <th scope="col">N</th>
+        <th scope="col">Name</th>
+        <th scope="col">ID</th>
+        <th scope="col">ListTestQuestions</th>
+        <th scope="col">ListTestAnswers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; index as i">
+        <th scope="row">{{i+1}}</th>
+
+        <td>{{user.full_name}}</td>
+        <td>{{user.id}}</td>
+        <td>
+          <div *ngFor="let u of user.listTestQuestions"> {{u}}</div>
+        </td>
+        <td>
+          <!-- <div *ngFor="let j of user.listTestAnswers">  -->
+          <!-- {{j.url}} -->
+          <button #testBtn value="{{i}}" class="btn btn-primary" (click)="showImg(testBtn.value)">
+            submit
+          </button>
+          <!-- </div> -->
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<!-- <div *ngFor="let i of user.listTestAnswers"> {{i.url}}</div> -->
